@@ -13,7 +13,7 @@
 	flags_1 = HEAR_1 //So it can hear you order your food
 	circuit = /obj/item/circuitboard/machine/replicator
 	var/list/menutier1 = list("rice", "egg", "ration pack", "glass","tea earl grey") //It starts off terribly so the chef isn't replaced. You can then upgrade it via RnD to give actual food.
-	var/list/menutier2 = list("burger", "steak", "fries","onion rings", "pancakes","coffee")
+	var/list/menutier2 = list("burger", "steak", "fries","onion rings", "pancakes","coffee","sonic wrench","phase calipers","plasma welder","phase discriminator","pattern enhancer","decoupler","odn scanner","Cadet Uniform","command uniform", "command uniform old", "command uniform 2250", "old command uniform", "command uniform circa 2250", "command uniform circa 2150", "command uniform 2150", "engineering uniform", "engineering uniform old", "old engineering uniform","Engineering uniform 2250", "engineering uniform circa 2250", "engineering uniform 2150", "engineering uniform circa 2150", "security uniform", "old security uniform", "security uniform old", "security uniform 2250","security uniform circa 2250", "security uniform 2150", "security uniform circa 2150", "medical uniform", "medical uniform old", "old medical uniform", "medical uniform 2250", "medical uniform circa 2250", "medical uniform 2150", "medical uniform circa 2150", "science uniform", "science uniform old", "old science uniform", "science uniform 2250", "science uniform circa 2250", "science uniform 2150", "science uniform circa 2150", "Romulan uniform", "uniform Romulan", "Klingon uniform", "uniform Klingon", "laser scalpel",)
 	var/list/menutier3 = list("cheese pizza", "meat pizza", "mushroom pizza", "meat pizza", "pineapple pizza", "donkpocket pizza", "vegetable pizza")
 	var/list/menutier4 = list("cake batter", "dough","egg box", "flour", "milk", "enzymes", "cheese wheel", "meat slab","an insult to pizza")
 	var/list/all_menus = list() //All the menu items. Built on init(). We scan for menu items that've been ordered here.
@@ -21,7 +21,7 @@
 	var/list/temps = list("cold", "warm", "hot", "extra hot")
 	var/activator = "computer"
 	var/menutype = READY //Tracks what stage the machine's at. If it's replicating the UI pops up with "please wait!"
-	var/fuel = 50 //Starts with a bit of fuel for lazy chefs.
+	var/fuel = 500 //Starts with a bit of fuel for lazy chefs.
 	var/capacity_multiplier = 1
 	var/failure_grade = 1
 	var/speed_grade = 1
@@ -47,7 +47,7 @@
 	if(menutype == REPLICATING)
 		dat += "REPLICATING FOOD, PLEASE WAIT.<br>"
 	dat += "<br><h1>MENU:</h1> "
-	dat += "<br><b>This machine is voice activated. To order food, say <i>computer</i> and then the food item you want. (Eg. Computer, Tea earl grey. Hot)</b><br> <hr><h2>Nutritional supplements:</h2>"
+	dat += "<br><b>This machine is voice activated. To activate the replicator, say <i>computer</i> and then the item you want. (Eg. Computer, Tea earl grey. Hot)</b><br> <hr><h2>Nutritional supplements:</h2>"
 
 	for(var/foodname in menutier1)
 		dat += "<br>[foodname]"
@@ -229,7 +229,7 @@
 				return
 			else
 				food = new /obj/item/reagent_containers/food/snacks/soup/mystery(get_turf(src))
-	if(menu_grade >= 2) //SCANNER GRADE 2 (or above)!
+	if(menu_grade >= 1) //SCANNER GRADE 2 (or above)!
 		switch(what)
 			if("burger")
 				food = new /obj/item/reagent_containers/food/snacks/burger/plain(get_turf(src))
@@ -241,6 +241,68 @@
 				food = new /obj/item/reagent_containers/food/snacks/onionrings(get_turf(src))
 			if("pancakes")
 				food = new /obj/item/reagent_containers/food/snacks/pancakes(get_turf(src))
+			if("sonic wrench")
+				food = new /obj/item/wrench(get_turf(src))
+			if("phase calipers")
+				food = new /obj/item/wirecutters(get_turf(src))
+			if("plasma welder")
+				food = new /obj/item/weldingtool(get_turf(src))
+			if("phase discriminator")
+				food = new /obj/item/screwdriver(get_turf(src))
+			if("odn scanner")
+				food = new /obj/item/multitool(get_turf(src))
+			if("decoupler")
+				food = new /obj/item/crowbar(get_turf(src))
+			if("pattern enhancer")
+				food = new /obj/item/pattern_enhancer(get_turf(src))
+			if("cadet uniform")
+				food = new /obj/item/clothing/under/trek/cadet(get_turf(src))
+			if("command uniform")
+				food = new /obj/item/clothing/under/trek/command/ds9(get_turf(src))
+			if("command uniform old","old command uniform")
+				food = new /obj/item/clothing/under/trek/command/next(get_turf(src))
+			if("command uniform 2250","command uniform circa 2250")
+				food = new /obj/item/clothing/under/trek/command/(get_turf(src))
+			if("command uniform 2150","command uniform circa 2150")
+				food = new /obj/item/clothing/under/trek/command/ent(get_turf(src))
+			if("Engineering uniform")
+				food = new /obj/item/clothing/under/trek/engsec/ds9(get_turf(src))
+			if("engineering uniform old","old engineering uniform")
+				food = new /obj/item/clothing/under/trek/engsec/next(get_turf(src))
+			if("engineering uniform 2250","engineering uniform circa 2250")
+				food = new /obj/item/clothing/under/trek/engsec/(get_turf(src))
+			if("engineering uniform 2150","engineering uniform circa 2150")
+				food = new /obj/item/clothing/under/trek/engsec/ent(get_turf(src))
+			if("security uniform")
+				food = new /obj/item/clothing/under/trek/engsec/ds9(get_turf(src))
+			if("security uniform old","old security uniform")
+				food = new /obj/item/clothing/under/trek/engsec/next(get_turf(src))
+			if("security uniform 2250","security uniform circa 2250")
+				food = new /obj/item/clothing/under/trek/engsec/(get_turf(src))
+			if("security uniform 2150","security uniform circa 2150")
+				food = new /obj/item/clothing/under/trek/engsec/ent(get_turf(src))
+			if("medical uniform")
+				food = new /obj/item/clothing/under/trek/medsci/ds9(get_turf(src))
+			if("medical uniform old","old medical uniform")
+				food = new /obj/item/clothing/under/trek/medsci/next(get_turf(src))
+			if("medical uniform 2250","medical uniform circa 2250")
+				food = new /obj/item/clothing/under/trek/medsci/(get_turf(src))
+			if("medical uniform 2150","medical uniform circa 2150")
+				food = new /obj/item/clothing/under/trek/medsci/ent(get_turf(src))
+			if("science uniform")
+				food = new /obj/item/clothing/under/trek/medsci/ds9(get_turf(src))
+			if("science uniform old","old science uniform")
+				food = new /obj/item/clothing/under/trek/medsci/next(get_turf(src))
+			if("science uniform 2250","science uniform circa 2250")
+				food = new /obj/item/clothing/under/trek/medsci/(get_turf(src))
+			if("science uniform 2150","science uniform circa 2150")
+				food = new /obj/item/clothing/under/trek/medsci/ent(get_turf(src))
+			if("Romulan uniform","uniform Romulan")
+				food = new /obj/item/clothing/under/trek/romulan(get_turf(src))
+			if("Klingon uniform","uniform Klingon")
+				food = new /obj/item/clothing/under/trek/klingon(get_turf(src))
+			if("laser scalpel")
+				food = new /obj/item/scalpel(get_turf (src))
 			if("coffee")
 				food = new /obj/item/reagent_containers/food/drinks/coffee(get_turf(src))
 				food.name = "coffee"
@@ -249,7 +311,7 @@
 					var/coffee = food.reagents.get_reagent_amount("coffee")
 					food.reagents.add_reagent("chloralhydrate", coffee)
 					food.reagents.remove_reagent("coffee",coffee)
-	if(menu_grade >= 3) //SCANNER GRADE 3 (or above)!
+	if(menu_grade >= 1) //SCANNER GRADE 3 (or above)!
 		switch(what)
 			if("cheese pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/margherita(get_turf(src))
@@ -263,7 +325,7 @@
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/pineapple(get_turf(src))
 			if("donk pizza","donkpocket pizza")
 				food = new /obj/item/reagent_containers/food/snacks/pizzaslice/donkpocket(get_turf(src))
-	if(menu_grade >= 4)
+	if(menu_grade >= 0)
 		switch(what)
 			if("cake batter")
 				food = new /obj/item/reagent_containers/food/snacks/cakebatter(get_turf(src))
@@ -281,6 +343,7 @@
 				food = new /obj/item/reagent_containers/food/snacks/store/cheesewheel(get_turf(src))
 			if("meat slab","slab of meat")
 				food = new /obj/item/reagent_containers/food/snacks/meat/slab(get_turf(src))
+			
 
 	if(food)
 		var/nutriment = food.reagents.get_reagent_amount("nutriment")
