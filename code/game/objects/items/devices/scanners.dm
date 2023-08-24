@@ -88,19 +88,20 @@ NANITE SCANNER
 	materials = list(MAT_METAL=200)
 	var/mode = 1
 	var/scanmode = 0
-	var/advanced = FALSE
+	var/advanced = TRUE
 
 /obj/item/healthanalyzer/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] begins to analyze [user.p_them()]self with [src]! The display shows that [user.p_theyre()] dead!</span>")
 	return BRUTELOSS
 
 /obj/item/healthanalyzer/attack_self(mob/user)
-	if(!scanmode)
-		to_chat(user, "<span class='notice'>You switch the health analyzer to scan chemical contents.</span>")
-		scanmode = 1
-	else
-		to_chat(user, "<span class='notice'>You switch the health analyzer to check physical health.</span>")
-		scanmode = 0
+    scanmode = (scanmode + 1) % 4
+    if(scanmode == 0)
+        to_chat(user, "<span class='notice'>You switch the tricorder to check physical health.</span>")
+    else if(scanmode == 1)
+        to_chat(user, "<span class='notice'>You switch the tricorder to scan reagents.</span>")
+    else if(scanmode == 2)
+        to_chat(user, "<span class='notice'>You switch the tricorder to scan genetics.</span>")
 
 /obj/item/healthanalyzer/attack(mob/living/M, mob/living/carbon/human/user)
 
@@ -118,8 +119,10 @@ NANITE SCANNER
 
 	if(scanmode == 0)
 		healthscan(user, M, mode, advanced)
-	else if(scanmode == 1)
+	else if (scanmode == 1)
 		chemscan(user, M)
+	else if (scanmode == 2)
+		genescan(user, M)
 
 	add_fingerprint(user)
 
@@ -356,6 +359,27 @@ NANITE SCANNER
 			else
 				to_chat(user, "<span class='notice'>Subject is not addicted to any reagents.</span>")
 
+/proc/genescan(mob/living/carbon/C, mob/living/user, obj/item/sequence_scanner/G)
+	if(!iscarbon(C) || !C.has_dna())
+		return
+	to_chat(user, "<span class='notice'>[C.name]'s potential mutations.")
+	for(var/A in C.dna.mutation_index)
+		var/datum/mutation/human/HM = get_initialized_mutation(A)
+		var/mut_name
+		if(G && (A in G.discovered))
+			mut_name = "[HM.name] ([HM.alias])"
+		else
+			mut_name = HM.alias
+		var/temp = get_gene_string(HM.type, C.dna)
+		var/display
+		for(var/i in 0 to length(temp) / DNA_MUTATION_BLOCKS-1)
+			if(i)
+				display += "-"
+			display += copytext(temp, 1 + i*DNA_MUTATION_BLOCKS, DNA_MUTATION_BLOCKS*(1+i) + 1)
+
+
+		to_chat(user, "<span class='boldnotice'>- [mut_name] > [display]</span>")
+
 /obj/item/healthanalyzer/verb/toggle_mode()
 	set name = "Switch Verbosity"
 	set category = "Object"
@@ -369,6 +393,7 @@ NANITE SCANNER
 			to_chat(usr, "The scanner now shows specific limb damage.")
 		if(0)
 			to_chat(usr, "The scanner no longer shows limb damage.")
+
 
 /obj/item/healthanalyzer/advanced
 	name = "advanced health analyzer"
@@ -482,9 +507,7 @@ NANITE SCANNER
 		var/area/user_area = T.loc
 		var/datum/weather/ongoing_weather = null
 
-		if(!user_area.outdoors)
-			to_chat(user, "<span class='warning'>[src]'s barometer function won't work indoors!</span>")
-			return
+
 
 		for(var/V in SSweather.processing)
 			var/datum/weather/W = V
