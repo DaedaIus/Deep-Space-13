@@ -70,3 +70,19 @@
 	icon_state = "trek_Q"
 	item_color = "trek_Q"
 	item_state = "r_suit"
+
+//Lower Decks
+/obj/item/clothing/under/trek/command/ld
+	icon_state = "trek_ld_command"
+	item_color = "trek_ld_command"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/trek/medsci/ld
+	icon_state = "trek_ld_medsci"
+	item_color = "trek_ld_medsci"
+	item_state = "r_suit"
+
+/obj/item/clothing/under/trek/engsec/ld
+	icon_state = "trek_ld_engsec"
+	item_color = "trek_ld_engsec"
+	item_state = "r_suit"
