@@ -35,7 +35,7 @@
 	dx=(32*end.x+end.pixel_x)-(32*start.x+start.pixel_x)
 	if(!dy)
 		return (dx>=0)?90:270
-	.=arctan(dx/dy)
+	.=arctan2(dx/dy)
 	if(dy<0)
 		.+=180
 	else if(dx<0)
@@ -44,7 +44,7 @@
 /proc/Get_Pixel_Angle(var/y, var/x)//for getting the angle when animating something's pixel_x and pixel_y
 	if(!y)
 		return (x>=0)?90:270
-	.=arctan(x/y)
+	.=arctan2(x/y)
 	if(y<0)
 		.+=180
 	else if(x<0)
@@ -451,7 +451,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 	var/y = min(world.maxy, max(1, A.y + dy))
 	return locate(x,y,A.z)
 
-/proc/arctan(x)
+/proc/arctan2(x)
 	var/y=arcsin(x/sqrt(1+x*x))
 	return y
 
