@@ -31,9 +31,9 @@
 	belt = /obj/item/pda
 	ears = /obj/item/radio/headset/heads/hop
 	gloves = /obj/item/clothing/gloves/color/black
-	uniform =  /obj/item/clothing/under/trek/command/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket/command
+	uniform =  /obj/item/clothing/under/trek/command/ld
 	shoes = /obj/item/clothing/shoes/jackboots
+	r_pocket = /obj/item/tricorder
 	backpack_contents = list(/obj/item/reagent_containers/food/drinks/shaker=1,/obj/item/clipboard=1, /obj/item/clothing/accessory/ds9_jacket/formal=1)
 
 /obj/effect/landmark/start/yeoman
@@ -68,8 +68,7 @@
 	name = "Security Officer (off duty)"
 	jobtype = /datum/job/offduty_sec
 
-	uniform = /obj/item/clothing/under/trek/engsec/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
+	uniform = /obj/item/clothing/under/trek/engsec/ld
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 	r_pocket = /obj/item/phaser_pack
@@ -101,8 +100,7 @@
 
 /datum/outfit/job/offduty_doctor
 	name = "Medical Doctor (off duty)"
-	uniform = /obj/item/clothing/under/trek/medsci/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
+	uniform = /obj/item/clothing/under/trek/medsci/ld
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 	belt = /obj/item/pda/medical
@@ -138,8 +136,7 @@
 /datum/outfit/job/offduty_engineer
 	name = "Engineer (off duty)"
 	jobtype = /datum/job/offduty_engineer
-	uniform = /obj/item/clothing/under/trek/engsec/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
+	uniform = /obj/item/clothing/under/trek/engsec/ld
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 	ears = /obj/item/radio/headset/headset_eng
@@ -168,8 +165,7 @@
 /datum/outfit/job/bridge/offduty
 	name = "Bridge Officer (off duty)"
 	jobtype = /datum/job/offduty_bridge_officer
-	uniform = /obj/item/clothing/under/trek/command/ds9
-	accessory = /obj/item/clothing/accessory/ds9_jacket/command
+	uniform = /obj/item/clothing/under/trek/command/ld
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset/heads/hop
 	id = /obj/item/card/id

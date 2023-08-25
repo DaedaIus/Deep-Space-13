@@ -31,6 +31,7 @@ Cadet
 	shoes = /obj/item/clothing/shoes/jackboots
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
+	r_pocket = /obj/item/tricorder
 
 /datum/outfit/job/cadet/post_equip(mob/living/carbon/human/H)
 	. = ..()
