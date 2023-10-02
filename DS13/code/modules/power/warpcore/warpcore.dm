@@ -135,8 +135,8 @@ Monitor the reaction for instability
 	desc = "A device designed to harness the power of a dilithium crystal for interstellar travel. It needs occasional realignment"
 	icon = 'DS13/icons/obj/power/warpcore/machines.dmi'
 	icon_state = "matrix"
-	var/alignment = 100 //this is damaged per tick based on how well youve aligned it. If this reaches 0 youre looking at a core breach as it regulates  the matter annihilation reaction
-	var/max_alignment = 100
+	var/alignment = 1000 //this is damaged per tick based on how well youve aligned it. If this reaches 0 youre looking at a core breach as it regulates  the matter annihilation reaction
+	var/max_alignment = 1000
 	var/obj/item/dilithium/stored
 	var/target_freq = 1
 	var/freq = 5

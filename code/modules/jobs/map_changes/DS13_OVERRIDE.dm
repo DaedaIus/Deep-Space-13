@@ -13,7 +13,8 @@
 
 /datum/outfit/job/captain/DS13
 	name = "Trek-Captain"
-	uniform =  /obj/item/clothing/under/trek/command/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	l_pocket = /obj/item/pda
 	belt = /obj/item/gun/energy/phaser
 	shoes = /obj/item/clothing/shoes/jackboots
@@ -21,21 +22,21 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = null
 	backpack_contents = list(/obj/item/clothing/accessory/ds9_jacket/formal/captain=1)
-	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+
 /datum/job/hop
 	outfit = /datum/outfit/job/hop/DS13
 	title = "First Officer"
 
 /datum/outfit/job/hop/DS13
 	name = "Trek-Head of Personnel"
-	uniform =  /obj/item/clothing/under/trek/command/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = null
 	gloves = /obj/item/clothing/gloves/color/black
 	l_pocket = /obj/item/pda
 	belt = /obj/item/gun/energy/phaser
-	r_pocket = /obj/item/tricorder
+
 //------
 //EngSec
 //------
@@ -48,10 +49,12 @@
 
 /datum/outfit/job/hos/DS13
 	name = "Trek-Head of Security"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	suit = null
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+	r_pocket = /obj/item/phaser_pack
 	head = /obj/item/clothing/head/beret/sec/navyofficer
 	belt = /obj/item/gun/energy/phaser
 
@@ -61,10 +64,11 @@
 
 /datum/outfit/job/warden/DS13
 	name = "Trek-Warden"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+	r_pocket = /obj/item/phaser_pack
 	belt = /obj/item/gun/energy/phaser
 	suit = null
 
@@ -73,10 +77,11 @@
 
 /datum/outfit/job/officer/DS13
 	name = "Trek-Security Officer"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+	r_pocket = /obj/item/phaser_pack
 	head = /obj/item/clothing/head/beret/sec/navyofficer
 	belt = /obj/item/gun/energy/phaser
 
@@ -88,10 +93,11 @@
 
 /datum/outfit/job/ce/DS13
 	name = "Trek-Chief Engineer"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+
 
 /datum/job/engineer
 	outfit = /datum/outfit/job/engineer/DS13
@@ -99,35 +105,38 @@
 
 /datum/outfit/job/engineer/DS13
 	name = "Trek-Station Engineer"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 /datum/job/atmos
 	outfit = /datum/outfit/job/atmos/DS13
 
 /datum/outfit/job/atmos/DS13
 	name = "Trek-Atmospheric Technician"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
-	r_pocket = /obj/item/tricorder
+
 
 /datum/job/qm
 	outfit = /datum/outfit/job/quartermaster
 
 /datum/outfit/job/quartermaster
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+	r_pocket = /obj/item/carkey
 
 /datum/outfit/job/qm/DS13
 	name = "Trek-Quartermaster"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+	r_pocket = /obj/item/carkey
 
 /datum/job/cargo_tech
 	outfit = /datum/outfit/job/cargo_tech/DS13
@@ -135,10 +144,11 @@
 
 /datum/outfit/job/cargo_tech/DS13
 	name = "Trek-Cargo Technician"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+
 
 //--------
 //Sciences
@@ -151,50 +161,52 @@
 
 /datum/outfit/job/cmo/DS13
 	name = "Trek-Chief Medical Officer"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+
 
 /datum/job/doctor
 	outfit = /datum/outfit/job/doctor/DS13
 
 /datum/outfit/job/doctor/DS13
 	name = "Trek-Medical Doctor"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 /datum/job/chemist
 	outfit = /datum/outfit/job/chemist/DS13
 
 /datum/outfit/job/chemist/DS13
 	name = "Chemist (Trek)"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
+
 
 /datum/job/geneticist
 	outfit = /datum/outfit/job/geneticist/DS13
 
 /datum/outfit/job/geneticist/DS13
 	name = "Trek-Geneticist"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 /datum/job/virologist
 	outfit = /datum/outfit/job/virologist/DS13
 
 /datum/outfit/job/virologist/DS13
 	name = "Trek-Virologist"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 //Research
 
@@ -204,10 +216,10 @@
 
 /datum/outfit/job/rd/DS13
 	name = "Trek-Research Director"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/command/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/command
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 /datum/job/scientist
 	outfit = /datum/outfit/job/scientist/DS13
@@ -215,10 +227,10 @@
 
 /datum/outfit/job/scientist/DS13
 	name = "Trek-Scientist"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
-	r_pocket = /obj/item/tricorder
 
 //Civilian
 
@@ -228,7 +240,8 @@
 
 /datum/outfit/job/assistant/DS13
 	name = "Trek-Assistant"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
@@ -242,7 +255,8 @@
 
 /datum/outfit/job/chaplain/DS13
 	name = "Trek-Chaplain"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
@@ -251,7 +265,8 @@
 
 /datum/outfit/job/janitor/DS13
 	name = "Trek-Janitor"
-	uniform = /obj/item/clothing/under/trek/engsec/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
@@ -260,7 +275,8 @@
 
 /datum/outfit/job/hydro/DS13
 	name = "Trek-Botanist"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
@@ -269,7 +285,8 @@
 
 /datum/outfit/job/cook/DS13
 	name = "Trek-Cook"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/medsci/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/medsci
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 
@@ -278,7 +295,8 @@
 
 /datum/outfit/job/bartender/DS13
 	name = "Trek-Bartender"
-	uniform = /obj/item/clothing/under/trek/medsci/ld
+	uniform = /obj/item/clothing/under/trek/engsec/ds9
+	accessory = /obj/item/clothing/accessory/ds9_jacket/engsec
 	shoes = /obj/item/clothing/shoes/jackboots
 	l_pocket = /obj/item/pda
 

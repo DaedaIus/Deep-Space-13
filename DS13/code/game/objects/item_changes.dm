@@ -72,6 +72,58 @@
 	req_access = list(ACCESS_SURGERY)
 	icon_state = "med_secure"
 
+/obj/item/scalpel/
+	name = "Laser Scalpel"
+	desc = "A specialized medical instrument used for creating incisions in various tissues"
+	icon = 'DS13/icons/obj/surgery.dmi'
+	usesound = 'DS13/sound/effects/items/laser_scalpel.ogg'
+	damtype = "fire"
+
+/obj/item/retractor/
+	name = "Dermal Retractor"
+	desc = "A medical instrument that holds incisions open during surgery."
+	icon = 'DS13/icons/obj/surgery.dmi'
+
+/obj/item/hemostat/
+	name = "Autosuture"
+	desc = "A tool used to seal closed and promote the healing of wounds from surgery or deep trauma by stimulating the patient's own anabolism."
+	icon = 'DS13/icons/obj/surgery.dmi'
+
+/obj/item/bonesetter/
+	name = "Osteo Regenerator"
+	desc = "A medical tool used to stimulate the natural repair of broken or fractured bones."
+	icon = 'DS13/icons/obj/surgery.dmi'
+
+/obj/item/circular_saw/
+	name = "Exoscalpel"
+	desc = "A more powerful version of the laser scalpel capable of cutting through bone."
+	icon = 'DS13/icons/obj/surgery.dmi'
+
+/obj/item/circular_saw/
+	name = "Exoscalpel"
+	desc = "A more powerful version of the laser scalpel capable of cutting through bone."
+	icon = 'DS13/icons/obj/surgery.dmi'
+
+/obj/item/storage/firstaid
+	name = "Medkit"
+	desc ="Medical Kits are used by Starfleet medical practitioners and officers and contain medical equipment for landing parties and away teams."
+	icon = 'DS13/icons/obj/storage.dmi'
+
+/obj/item/paper
+	name = "PADD"
+	icon = 'DS13/icons/obj/bureaucracy.dmi'
+	desc = "A digital writing tablet"
+
+/obj/item/paper_words
+	name = "PADD"
+	icon = 'DS13/icons/obj/bureaucracy.dmi'
+	desc = "A digital writing tablet"
+
+/obj/item/paper_bin1
+	name = "PADDs"
+	icon = 'DS13/icons/obj/bureaucracy.dmi'
+	desc = "A stack of PADDs"
+
 /obj/structure/closet/secure_closet/medical_trek/PopulateContents()
 	..()
 	new /obj/item/radio/headset/headset_med(src)

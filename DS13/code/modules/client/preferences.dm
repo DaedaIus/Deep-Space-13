@@ -31,7 +31,7 @@
 		if("lazy")
 			backstory_reason = "I joined starfleet because my parents told me to.<br>"
 		if("rebel")
-			backstory_reason = "I joined starfleet to find somewhere I belong.<br>"
+			backstory_reason = "I joined starfleet to piss off my Dad.<br>"
 		if("insane")
 			backstory_reason = "I joined starfleet to kill hostile aliens.<br>"
 	choice = input(user,"What were you like at starfleet academy?", "Backstory", null) in responses

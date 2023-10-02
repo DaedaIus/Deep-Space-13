@@ -33,6 +33,10 @@ map Columbia
 	#voteweight 1.5
 endmap
 
+map Nova
+	#voteweight 1.5
+endmap
+
 map boxstation
 	#voteweight 1.5
 endmap

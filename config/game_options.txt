@@ -6,10 +6,10 @@ DAMAGE_MULTIPLIER 1
 ## REVIVAL ###
 
 ## whether pod plants work or not
-REVIVAL_POD_PLANTS
+#REVIVAL_POD_PLANTS
 
 ## whether cloning tubes work or not
-REVIVAL_CLONING
+#REVIVAL_CLONING
 
 ## amount of time (in hundredths of seconds) for which a brain retains the "spark of life" after the person's death (set to -1 for infinite)
 REVIVAL_BRAIN_LIFE -1
@@ -426,18 +426,20 @@ SILICON_MAX_LAW_AMOUNT 12
 ROUNDSTART_RACES human
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
-ROUNDSTART_RACES lizard
+#ROUNDSTART_RACES lizard
 #ROUNDSTART_RACES fly
 #ROUNDSTART_RACES moth
-ROUNDSTART_RACES plasmaman
+#ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES shadow
 
 ## Races that are better than humans in some ways, but worse in others
-ROUNDSTART_RACES ethereal
+#ROUNDSTART_RACES ethereal
 ROUNDSTART_RACES klingon
+ROUNDSTART_RACES cardassian
 ROUNDSTART_RACES andorian
 ROUNDSTART_RACES vulcan
 ROUNDSTART_RACES ferengi
+ROUNDSTART_RACES nekonian
 #ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES golem
 #ROUNDSTART_RACES adamantine

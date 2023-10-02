@@ -4,7 +4,7 @@ GLOBAL_LIST_INIT(vulcan_names, world.file2list("strings/names/vulcan.txt"))
 	name = "Vulcan"
 	id = "vulcan"
 	default_color = "FFFFFF"
-	exotic_blood = "romulanblood"
+	exotic_blood = "T-"
 	species_traits = list(EYECOLOR,HAIR,FACEHAIR,LIPS)
 	default_features = list("mcolor" = "FFF", "tail_human" = "None", "ears" = "None", "wings" = "None", "hair" = "bowl")
 	use_skintones = 1
